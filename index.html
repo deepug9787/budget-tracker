@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Budget Tracker</title>
+
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap"
+            rel="stylesheet"
+        />
+
+        <link rel="stylesheet" href="style.css" media="screen" />
+        <script src="main.js" type="module"></script>
+    </head>
+    <body>
+        <header class="site-header contained">
+            <h1>Budget Tracker</h1>
+            <div class="stats site-header__stats">Balance: <span class="balance"></span></div>
+        </header>
+
+        <main class="main-content contained">
+            <form action="#" class="transaction-form" id="transaction-form">
+                <div class="message transaction-form__message" id="transaction-form-message"></div>
+                <label for="date">Date:</label>
+                <input type="date" name="date" id="date" />
+
+                <label for="description">Description:</label>
+                <input type="text" name="description" id="description" maxlength="50" />
+
+                <fieldset>
+                    <div class="grid-wrapper transaction-form__grid-wrapper">
+                        <legend>Type:</legend>
+                        <div class="flex-wrapper transaction-form__flex-wrapper">
+                            <div>
+                                <input type="radio" name="type" id="income" value="income" />
+                                <label for="income">Income</label>
+                            </div>
+                            <div>
+                                <input type="radio" name="type" id="expense" value="expense" />
+                                <label for="expense">Expense</label>
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+
+                <label for="amount">Amount:</label>
+                <input type="number" name="amount" id="amount" max="10000" />
+
+                <button
+                    type="submit"
+                    class="btn transaction-form__submit-btn"
+                    id="add-new-transaction-btn"
+                >
+                    Add New Transaction
+                </button>
+            </form>
+
+            <table class="stats main-content__stats">
+                <tr>
+                    <td>Total Income:</td>
+                    <td class="total-income"></td>
+                </tr>
+
+                <tr>
+                    <td>Total Expense:</td>
+                    <td class="total-expense"></td>
+                </tr>
+
+                <tr class="stats__balance-row">
+                    <td>Balance:</td>
+                    <td class="balance"></td>
+                </tr>
+            </table>
+
+            <table class="transactions">
+                <thead class="transactions__head">
+                    <tr>
+                        <th>Date</th>
+                        <th>Description</th>
+                        <th>Type</th>
+                        <th>Amount</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody class="transactions__body"></tbody>
+            </table>
+        </main>
+    </body>
+</html>
